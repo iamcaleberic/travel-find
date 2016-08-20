@@ -6,4 +6,5 @@ class String
 	def blank?
 		/\A[[:space]]*\z/ === self
 	end
+	
 end
