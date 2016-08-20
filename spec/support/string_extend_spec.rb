@@ -19,17 +19,29 @@ describe 'String' do
   
     describe "#blank?" do
     
-        it "returns true if string is empty" 
+        it "returns true if string is empty" do
+            expect(''.blank?).to be true
+        end
 
-        it "returns true if String contains only spaces"
+        it "returns true if String contains only spaces" do
+            expect("   ".blank?).to be true
+        end
 
-        it "returns true of string contains only tabs"
+        it "returns true of string contains only tabs" do
+            expect("\t\t\t".blank?).to be true
+        end
         # \t\t\t
 
-        it "returns true if string contains only spaces and tabs"
+        it "returns true if string contains only spaces and tabs" do
+            expect("\t \t \t".blank?).to be true
+        end
 
-        it "returns false if string contains a letter"
+        it "returns false if string contains a letter" do
+            expect("me".blank?).to be_falsey
+        end
 
-        it "returns false if string contains a number"
+        it "returns false if string contains a number" do
+            expect('2'.blank?).to be_falsey
+        end
     end 
 end

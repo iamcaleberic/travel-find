@@ -4,7 +4,7 @@ class String
 	end
 
 	def blank?
-		/\A[[:space]]*\z/ === self
+		/\A[[:space:]]*\z/ === self
 	end
 	
 end
