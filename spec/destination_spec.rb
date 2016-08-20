@@ -9,12 +9,14 @@ describe Destination do
     }
     describe 'attributes' do
         it "allows reading and writing for :name" do
-            expect(hong_kong.name).to eq("Hong Kong")
+            subject.name = "London"
+            expect(subject.name).to eq("London")
         end
 
 
         it "allows reading and writing for country" do
-            expect(hong_kong.country).to eq("China")
+            subject.country = "England"
+            expect(subject.country).to eq("England")
         end
     end
 
@@ -37,6 +39,22 @@ describe Destination do
         end
 
         context "with custom options" do
+            let(:new_option){Destination.new()}
+            it "allows setting the :name" do
+                subject.name = "Dubai"
+                expect(subject.name).to eq("Dubai")
+                
+            end
+
+            it "allows setting the :country" do
+                subject.country = "UAE"
+                expect(subject.country).to eq("UAE")
+            end
+
+            it "allows setting he price" do 
+                subject.price = 500
+                expect(subject.price).to eq(500)
+            end
         
         end 
     
